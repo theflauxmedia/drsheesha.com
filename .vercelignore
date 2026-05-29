@@ -1,0 +1,15 @@
+# Shrink CLI uploads — Vercel builds from source on their servers (Git deploy recommended)
+node_modules
+.git
+dist
+.vercel
+help
+*.md
+!README.md
+.env
+.env.*
+.DS_Store
+.vscode
+.idea
+coverage
+*.log
