@@ -38,15 +38,15 @@ const About = () => (
           <p style={{ maxWidth: '720px', color: 'var(--smoke-dim)' }}>
             Dr. Sheesha was created for shisha connoisseurs who seek more than just
             flavours. Located in the heart of Dubai, our lounge blends traditional
-            shisha craftsmanship with a modern rooftop atmosphere — offering a
-            refined social escape above the city.
+            shisha craftsmanship with a modern lounge atmosphere — offering a
+            refined social escape in the heart of Al Karama.
           </p>
         </motion.div>
         <motion.div className="about-hero-image" {...sectionReveal}>
           <img
             className="about-hero-image__photo"
-            src={photoSrc('AMBIANCE', 1)}
-            alt="Dr. Sheesha lounge interior"
+            src={photoSrc('AMBIANCE', 28)}
+            alt="Dr. Sheesha lounge interior with premium seating"
             loading="lazy"
           />
         </motion.div>
@@ -91,9 +91,9 @@ const About = () => (
             Designed for Evenings That Last
           </h2>
           <p style={{ maxWidth: '640px', color: 'var(--smoke-dim)' }}>
-            Our rooftop layout offers intimate corners, social tables, and open
-            views — perfect for casual nights, celebrations, and private
-            gatherings.
+            Our lounge layout offers intimate corners, social tables, and
+            welcoming spaces — perfect for casual nights, celebrations, and
+            private gatherings.
           </p>
         </motion.div>
         <motion.div

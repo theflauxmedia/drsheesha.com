@@ -1,34 +1,34 @@
 import { SITE } from './site';
 
 const defaultDescription =
-  'Dr. Sheesha — premium shisha rooftop lounge in Al Karama, Dubai. Signature flavours, skyline views, DJ nights & table reservations. Open daily 12 PM – 6 AM.';
+  'Dr. Sheesha — premium flavours lounge in Al Karama, Dubai. Premium flavours & table reservations. Open daily 12 PM – 6 AM.';
 
 /** Per-route SEO metadata */
 export const PAGE_SEO = {
   '/': {
-    title: 'Dr. Sheesha Dubai | Premium Shisha Rooftop Lounge',
+    title: 'Dr. Sheesha Dubai | Premium Flavours Lounge',
     description: defaultDescription,
     keywords:
-      'shisha lounge Dubai, hookah bar Al Karama, rooftop lounge Dubai, Dr Sheesha, premium shisha Dubai, shisha restaurant UAE',
+      'shisha lounge Dubai, hookah bar Al Karama, Dr Sheesha, premium flavours Dubai, shisha restaurant UAE',
   },
   '/about': {
     title: 'Our Story | Dr. Sheesha Dubai',
     description:
-      'Discover Dr. Sheesha — a premium rooftop shisha lounge in Dubai blending traditional craftsmanship with modern ambience above Al Karama.',
+      'Discover Dr. Sheesha — a premium flavours lounge in Dubai blending traditional craftsmanship with modern ambience in Al Karama.',
     keywords: 'about Dr Sheesha, shisha lounge story Dubai, premium hookah Dubai',
   },
   '/events': {
     title: 'Events & Nights | Dr. Sheesha Dubai',
     description:
-      'DJ nights, ladies nights, birthdays & private events at Dr. Sheesha — Dubai\'s premium rooftop shisha lounge in Al Karama.',
+      'Birthdays & private events at Dr. Sheesha — Dubai\'s premium flavours lounge in Al Karama.',
     keywords:
-      'shisha lounge events Dubai, ladies night Dubai, private rooftop events, DJ nights Al Karama',
+      'shisha lounge events Dubai, private lounge events, Al Karama',
   },
   '/gallery': {
     title: 'Gallery | Dr. Sheesha Dubai',
     description:
-      'Browse photos of Dr. Sheesha — rooftop ambience, signature shisha, cocktails, food, and unforgettable nights in Dubai.',
-    keywords: 'Dr Sheesha photos, shisha lounge gallery Dubai, rooftop lounge images',
+      'Browse photos of Dr. Sheesha — lounge ambience, premium flavours, cocktails, food, and unforgettable nights in Dubai.',
+    keywords: 'Dr Sheesha photos, shisha lounge gallery Dubai, lounge images',
   },
   '/contact': {
     title: 'Reserve a Table | Contact | Dr. Sheesha Dubai',
@@ -41,7 +41,7 @@ export const PAGE_SEO = {
 
 export const getPageSeo = (pathname) =>
   PAGE_SEO[pathname] ?? {
-    title: `${SITE.name} Dubai | Premium Shisha Rooftop Lounge`,
+    title: `${SITE.name} Dubai | Premium Flavours Lounge`,
     description: defaultDescription,
     keywords: 'shisha lounge Dubai, Dr Sheesha',
   };

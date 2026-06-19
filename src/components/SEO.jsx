@@ -55,7 +55,7 @@ const SEO = () => {
     setMeta('og:description', description, 'property');
     setMeta('og:url', canonical, 'property');
     setMeta('og:image', ogImage, 'property');
-    setMeta('og:image:alt', `${SITE.name} — premium shisha rooftop lounge, Dubai`, 'property');
+    setMeta('og:image:alt', `${SITE.name} — premium flavours lounge, Dubai`, 'property');
     setMeta('og:locale', SITE.locale, 'property');
 
     setMeta('twitter:card', 'summary_large_image');

@@ -9,46 +9,45 @@ import { heroStagger, heroItem, sectionReveal, staggerContainer, staggerChild } 
 
 const PILLARS = [
   {
-    title: 'Signature Shisha',
-    text: 'Premium blends, exotic flavours, and expert preparation.',
+    title: 'Premium Flavours',
+    text: 'Premium blends, exotic infusions, and expert preparation for every palate.',
   },
   {
-    title: 'Rooftop Ambience',
-    text: 'Sophisticated seating, skyline views, and relaxed luxury.',
+    title: 'Lounge Ambience',
+    text: 'Sophisticated seating, inviting interiors, and relaxed luxury.',
   },
   {
-    title: 'Music & Mood',
-    text: 'DJ nights, lounge beats, and curated evening vibes.',
+    title: 'Food & Drinks',
+    text: 'Craft cocktails, mocktails, and light bites to complement every session.',
   },
 ];
 
 const HIGHLIGHTS = [
-  { name: 'DJ Nights', time: 'Thu – Sat | From 9 PM' },
-  { name: 'Ladies Nights', time: 'Wednesday | Special offers' },
   { name: 'Happy Hour Specials', time: 'Daily | 4 PM – 7 PM' },
-  { name: 'Weekend Rooftop Sessions', time: 'Fri – Sun | All evening' },
+  { name: 'Weekend Lounge Sessions', time: 'Fri – Sun | All evening' },
 ];
 
 const Home = () => {
+  const heroRef = useRef(null);
   const galleryRef = useRef(null);
   const galleryInView = useInView(galleryRef, { once: true, margin: '-60px' });
 
   return (
   <main className="page page--home">
     {/* Hero — no top padding; full viewport */}
-    <section className="hero">
-      <HeroSlider />
+    <section ref={heroRef} className="hero">
+      <HeroSlider heroRef={heroRef} />
       <motion.div className="hero__content" {...heroStagger}>
         <motion.p className="label-gold label-with-lines" variants={heroItem}>
           Al Karama, Dubai
         </motion.p>
         <motion.h1 variants={heroItem}>Dr. Sheesha</motion.h1>
         <motion.p className="hero__sub" variants={heroItem}>
-          Premium Shisha • Rooftop Lounge • Elevated Nights
+          {SITE.tagline}
         </motion.p>
         <motion.p className="hero__copy" variants={heroItem}>
-          Experience the art of shisha in a refined rooftop setting — where
-          handcrafted flavours, music, and city views come together for
+          Experience the art of shisha in a refined lounge setting — where
+          handcrafted flavours, music, and warm ambience come together for
           unforgettable evenings.
         </motion.p>
         <motion.div className="hero__ctas" variants={heroItem}>
@@ -60,8 +59,6 @@ const Home = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
             <a
               href={SITE.menuUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn-outline"
             >
               Explore Menu
@@ -124,7 +121,7 @@ const Home = () => {
           <img
             className="brand-split__photo"
             src={photoSrc('AMBIANCE', 6)}
-            alt="Dr. Sheesha rooftop ambience"
+            alt="Dr. Sheesha lounge ambience"
             loading="lazy"
           />
         </motion.div>
@@ -134,11 +131,11 @@ const Home = () => {
     {/* Weekly highlights */}
     <section className="section bg-charcoal-mid">
       <div className="section-inner">
-        <motion.div className="section-header" {...sectionReveal}>
+        <motion.div className="section-header section-centered" {...sectionReveal}>
           <h2>What&apos;s On at Dr. Sheesha</h2>
         </motion.div>
         <motion.div
-          className="highlights-scroll"
+          className="highlights-scroll highlights-scroll--centered"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -177,7 +174,7 @@ const Home = () => {
             Moments at Dr. Sheesha
           </h2>
           <p style={{ color: 'var(--smoke-dim)', fontSize: '0.95rem' }}>
-            Ambience, shisha, drinks, food, and evenings on the rooftop.
+            Ambience, shisha, drinks, food, and unforgettable evenings.
           </p>
         </motion.div>
 
@@ -212,7 +209,7 @@ const Home = () => {
     {/* Final CTA */}
     <section className="section bg-black-rich final-cta">
       <motion.div className="section-inner" {...sectionReveal}>
-        <h2>Reserve Your Seat Under the Stars</h2>
+        <h2>Reserve Your Table Tonight</h2>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
           <Link to="/contact" className="btn btn-gold btn-shimmer">
             Book Now

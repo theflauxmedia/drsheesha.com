@@ -4,7 +4,6 @@ export const CATEGORY_COUNTS = {
   AMBIANCE: 36,
   DRINKS: 83,
   FOODS: 101,
-  LADIES: 31,
   SHEESHA: 19,
 };
 
@@ -12,7 +11,6 @@ export const CATEGORY_LABELS = {
   AMBIANCE: 'Ambience',
   DRINKS: 'Drinks',
   FOODS: 'Food',
-  LADIES: 'Ladies Night',
   SHEESHA: 'Shisha',
 };
 
@@ -22,7 +20,6 @@ export const GALLERY_FILTERS = [
   { id: 'SHEESHA', label: 'Shisha' },
   { id: 'DRINKS', label: 'Drinks' },
   { id: 'FOODS', label: 'Food' },
-  { id: 'LADIES', label: 'Ladies Night' },
 ];
 
 const pad = (n) => String(n).padStart(3, '0');
@@ -57,6 +54,6 @@ export const HOME_GALLERY_PREVIEW = [
   { category: 'DRINKS', index: 24 },
   { category: 'FOODS', index: 10 },
   { category: 'FOODS', index: 35 },
-  { category: 'LADIES', index: 3 },
+  { category: 'AMBIANCE', index: 3 },
   { category: 'AMBIANCE', index: 28 },
 ].map(({ category, index }) => buildPhoto(category, index));

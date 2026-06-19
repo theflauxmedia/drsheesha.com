@@ -3,7 +3,7 @@
 
 site: https://drsheesha.com
 name: Dr. Sheesha Dubai
-type: premium shisha rooftop lounge
+type: premium flavours lounge
 location: Al Karama, Dubai, UAE
 phone: +971 56 671 1730
 hours: daily 12:00-06:00

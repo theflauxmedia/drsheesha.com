@@ -3,7 +3,7 @@
 export const SITE = {
   name: 'Dr. Sheesha',
   legalName: 'Dr. Sheesha Dubai',
-  tagline: 'Premium Shisha • Rooftop Lounge • Elevated Nights',
+  tagline: 'Premium Flavours • Shisha Lounge • Elevated Nights',
   url: 'https://drsheesha.com',
   locale: 'en_AE',
   language: 'en',

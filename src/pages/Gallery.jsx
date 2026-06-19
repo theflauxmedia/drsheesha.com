@@ -33,8 +33,7 @@ const Gallery = () => {
                 fontSize: '0.95rem',
               }}
             >
-              {totalCount} photographs across ambience, shisha, drinks, food,
-              and ladies night.
+              {totalCount} photographs across ambience, shisha, drinks, and food.
             </p>
             <div className="gold-divider" />
           </motion.div>

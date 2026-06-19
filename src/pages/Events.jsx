@@ -5,18 +5,6 @@ import { sectionReveal, staggerContainer, staggerChild } from '../utils/motion';
 
 const EVENT_TILES = [
   {
-    title: 'DJ Nights',
-    category: 'AMBIANCE',
-    index: 8,
-    alt: 'DJ nights at Dr. Sheesha rooftop lounge',
-  },
-  {
-    title: 'Ladies Nights',
-    category: 'LADIES',
-    index: 6,
-    alt: 'Ladies night at Dr. Sheesha Dubai',
-  },
-  {
     title: 'Birthday Celebrations',
     category: 'AMBIANCE',
     index: 19,
@@ -26,7 +14,7 @@ const EVENT_TILES = [
     title: 'Corporate & Private Events',
     category: 'AMBIANCE',
     index: 27,
-    alt: 'Private corporate event at Dr. Sheesha rooftop',
+    alt: 'Private corporate event at Dr. Sheesha lounge',
   },
 ];
 
@@ -34,7 +22,6 @@ const EVENT_TYPES = [
   'Birthday Celebration',
   'Corporate Evening',
   'Private Gathering',
-  'Ladies Night Booking',
   'Other',
 ];
 
@@ -69,8 +56,8 @@ const Events = () => {
             </h1>
             <p style={{ maxWidth: '640px', color: 'var(--smoke-dim)' }}>
               Dr. Sheesha hosts weekly themed nights and special events designed
-              to elevate your evenings — from chilled lounge sessions to energetic
-              DJ nights.
+              to elevate your evenings — from relaxed lounge sessions to private
+              celebrations and gatherings.
             </p>
           </motion.div>
 
@@ -109,7 +96,7 @@ const Events = () => {
               Private Events & Celebrations
             </h2>
             <p style={{ color: 'var(--smoke-dim)', marginBottom: '2rem', maxWidth: '600px' }}>
-              Looking to host a private gathering? Our rooftop space is ideal for
+              Looking to host a private gathering? Our lounge is ideal for
               birthdays, corporate evenings, and exclusive celebrations — complete
               with customized menus and personalized service.
             </p>

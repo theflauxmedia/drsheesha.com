@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { HERO_SLIDES, HERO_SLIDE_INTERVAL_MS } from '../data/heroSlides';
+import { useLenis } from './SmoothScroll';
 
 const INTERVAL_SEC = HERO_SLIDE_INTERVAL_MS / 1000;
 
@@ -7,12 +8,36 @@ const INTERVAL_SEC = HERO_SLIDE_INTERVAL_MS / 1000;
  * Hero background — single active image in DOM (lightweight).
  * CSS handles crossfade and Ken Burns.
  */
-const HeroSlider = () => {
+const HeroSlider = ({ heroRef }) => {
+  const { lenis, reducedMotion } = useLenis();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [tintStrength, setTintStrength] = useState(1);
   const pausedRef = useRef(paused);
 
   pausedRef.current = paused;
+
+  useEffect(() => {
+    const hero = heroRef?.current;
+    if (!hero || reducedMotion) return undefined;
+
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+      setTintStrength(1 - progress);
+    };
+
+    update();
+
+    const lenisInstance = lenis?.current;
+    if (lenisInstance) {
+      lenisInstance.on('scroll', update);
+      return () => lenisInstance.off('scroll', update);
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, [heroRef, lenis, reducedMotion]);
 
   const goTo = (index) => {
     setCurrent((index + HERO_SLIDES.length) % HERO_SLIDES.length);
@@ -54,9 +79,15 @@ const HeroSlider = () => {
         />
       </div>
 
-      <div className="hero-slider__shade" />
-      <div className="hero-slider__vignette" />
-      <div className="hero-slider__gold" />
+      <div
+        className="hero-slider__overlays"
+        style={{ opacity: tintStrength }}
+      >
+        <div className="hero-slider__tint" />
+        <div className="hero-slider__shade" />
+        <div className="hero-slider__vignette" />
+        <div className="hero-slider__gold" />
+      </div>
 
       <div
         className="hero-slider__ui"

@@ -8,7 +8,7 @@ const restaurantSchema = {
   name: SITE.name,
   alternateName: SITE.legalName,
   description:
-    'Premium shisha rooftop lounge in Al Karama, Dubai — signature flavours, skyline views, events, and table reservations.',
+    'Premium flavours lounge in Al Karama, Dubai — premium flavours, events, and table reservations.',
   url: SITE.url,
   image: absoluteImage(SITE.defaultOgImage),
   logo: absoluteImage('/Dr_Sheesha_Dubai_Logo.png'),

@@ -11,8 +11,8 @@ const NavItem = ({ link, onClick }) => {
     return (
       <a
         href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={link.sameTab ? undefined : '_blank'}
+        rel={link.sameTab ? undefined : 'noopener noreferrer'}
         onClick={onClick}
       >
         {link.label}

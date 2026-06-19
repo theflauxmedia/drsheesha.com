@@ -8,6 +8,7 @@ export const NAV_LINKS = [
     label: 'Menu',
     href: SITE.menuUrl,
     external: true,
+    sameTab: true,
   },
   { to: '/events', label: 'Events' },
   { to: '/gallery', label: 'Gallery' },

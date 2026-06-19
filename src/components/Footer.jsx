@@ -6,7 +6,11 @@ import SocialLinks from './SocialLinks';
 const FooterNavLink = ({ link }) => {
   if (link.external) {
     return (
-      <a href={link.href} target="_blank" rel="noopener noreferrer">
+      <a
+        href={link.href}
+        target={link.sameTab ? undefined : '_blank'}
+        rel={link.sameTab ? undefined : 'noopener noreferrer'}
+      >
         {link.label}
       </a>
     );
@@ -59,12 +63,7 @@ const Footer = () => {
           <div className="footer__col">
             <h3 className="footer__heading">Connect</h3>
             <SocialLinks className="footer__social" />
-            <a
-              href={SITE.menuUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__menu-link"
-            >
+            <a href={SITE.menuUrl} className="footer__menu-link">
               View Digital Menu →
             </a>
           </div>
